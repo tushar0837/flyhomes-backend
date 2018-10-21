@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_20_194802) do
+ActiveRecord::Schema.define(version: 2018_10_21_225522) do
+
+  create_table "surveys", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price_min"
+    t.integer "price_max"
+    t.text "places"
+    t.index ["user_id"], name: "index_surveys_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -21,6 +31,11 @@ ActiveRecord::Schema.define(version: 2018_10_20_194802) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "authentication_token", limit: 30
+    t.integer "phone"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "city"
+    t.string "country"
     t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
