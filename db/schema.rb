@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_21_225522) do
+ActiveRecord::Schema.define(version: 2018_10_22_114319) do
 
   create_table "surveys", force: :cascade do |t|
     t.integer "user_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_10_21_225522) do
     t.integer "price_min"
     t.integer "price_max"
     t.text "places"
+    t.string "properties"
     t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 

@@ -9,7 +9,7 @@ class Api::V1::UsersController < ApplicationController
     end
     user = @user.update_attributes(user_params)
     if user
-      render json: {message: current_user}, status: 200
+      render json: {user: current_user}, status: 200
     else
       render json: {message: 'Data not updated, Please try again'}, status: 400
     end
