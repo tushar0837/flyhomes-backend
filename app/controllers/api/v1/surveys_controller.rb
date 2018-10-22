@@ -32,6 +32,6 @@ class Api::V1::SurveysController < ApplicationController
 
   private
   def survey_params
-    params.require(:survey).permit(:price_min, :price_max, :places => [], :properties => [])
+    params.require(:survey).permit(:price_min, :completed, :price_max, :places => [], :properties => [])
   end
 end
