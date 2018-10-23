@@ -12,7 +12,7 @@ class Api::V1::SurveysController < ApplicationController
   end
 
   def show
-    survey = Survey.where('user_id =?',current_user.id).first
+    survey = Survey.where('user_id =?',current_user.id)
     if survey
       render json: { message: 'success', survey: survey }, status: 200
     else
@@ -22,7 +22,7 @@ class Api::V1::SurveysController < ApplicationController
 
 
   def update
-    survey = Survey.where('user_id =?',current_user.id).first
+    survey = Survey.where('user_id =? AND id =?',current_user.id, params[:id])
     if survey.update(survey_params)
       render json: { message: 'Survey updated', survey: survey}, status: 200
     else
