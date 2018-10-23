@@ -1,24 +1,9 @@
-# README
+Setup steps:
+1. Open your terminal
+2. Go to the directory in which you want to clone the repo
+3. Run command `git@github.com:tushar0837/flyhomes-backend.git`
+4. `cd flyhomes-backend`
+5. Install gems through command `bundle install`
+6. Run command `rails s -p 3000`
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Note: Make sure your backend server is running on port 3000
